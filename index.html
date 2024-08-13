@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Task</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      .grid-container {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .img-box {
+        overflow: hidden;
+        position: relative;
+      }
+      .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .img-box:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(225deg, #e91e63, #03a9f4);
+        mix-blend-mode: screen;
+      }
+      .content-box {
+        /* background-color: blueviolet; */
+        display: grid;
+        place-items: center;
+      }
+      .form-box {
+        /* background-color: #fff; */
+        display: grid;
+        place-items: center;
+        padding: 30px;
+        gap: 50px;
+      }
+      .form-box h2 {
+        color: #607d8b;
+        font-weight: 600;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        border-bottom: 4px solid #ff4584;
+        letter-spacing: 1px;
+      }
+      .form-box .input-box {
+        margin-bottom: 10px;
+      }
+      .form-box .input-box span {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: inline-block;
+        color: #000;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+      .form-box .input-box input {
+        width: 100%;
+        padding: 10px 20px;
+        outline: none;
+        font-weight: 400;
+        border: 1px solid #000;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: #000;
+        background-color: transparent;
+        border-radius: 30px;
+      }
+      .form-box .input-box input[type="submit"]:hover {
+        background-color: #ff4584;
+        color: #fff;
+      }
+      .form-box .input-box p {
+        color: #000;
+      }
+      .form-box .input-box p a {
+        color: #ff4584;
+      }
+      .remember {
+        margin-bottom: 8px;
+        color: #000;
+        font-weight: 400;
+        font-size: 14px;
+      }
+      h3 {
+        color: #000;
+        text-align: center;
+        font-weight: 500;
+      }
+      .social {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+      }
+      .social li {
+        list-style: none;
+        background-color: #e91e63;
+        padding: 15px;
+        border-radius: 50%;
+        color: #fff;
+      }
+      .social li:hover {
+        background-color: #ff4584;
+      }
+      .icon {
+        font-size: 20px;
+      }
+      @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          overflow: hidden;
+        }
+        .grid-container .img-box {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .grid-container .content-box {
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+        }
+        .grid-container .content-box .form-box {
+          width: 100%;
+          height: 100%;
+          padding: 40px;
+          background: rgba(255, 255, 255, 0.7);
+          margin: 30px;
+        }
+        .form-box h3 {
+          color: #607d8b;
+          text-align: center;
+          /* margin: 30px 0 10px; */
+          font-weight: 500;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="img-box">
+        <img src="bg-img.jpg" alt="" />
+      </div>
+      <div class="content-box">
+        <div class="form-box">
+          <h2>Login</h2>
+          <form action="#">
+            <div class="input-box">
+              <span>Username</span>
+              <input type="text" name="" />
+            </div>
+            <div class="input-box">
+              <span>Password</span>
+              <input type="password" name="" />
+            </div>
+            <div class="remember">
+              <label for=""><input type="checkbox" />Remember Me</label>
+            </div>
+            <div class="input-box">
+              <input type="submit" value="Sign in" />
+            </div>
+            <div class="input-box">
+              <p>Already have account <a href="#">Login</a></p>
+            </div>
+          </form>
+          <h3>Login with Social Media</h3>
+          <ul class="social">
+            <li><i class="fa fa-facebook icon"></i></li>
+            <li><i class="fa fa-instagram icon"></i></li>
+            <li><i class="fa fa-google icon"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
